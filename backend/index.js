@@ -12,7 +12,7 @@ const clothingRoute = require('./routes/index')
 
 app.use(cors())
 
-connectToMongoDB('mongodb://127.0.0.1:27017/cloth_shop')
+connectToMongoDB(`${process.env.MONGO_URI}/cloth_shop`)
 .then(()=> console.log("mongodb connected"))
 .catch((err) => console.log("error..." , err))
 

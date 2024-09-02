@@ -36,7 +36,7 @@ const items = [
 const seedDB = async () => {
   try {
 
-    await connectToMongoDB('mongodb://127.0.0.1:27017/cloth_shop')
+    await connectToMongoDB(`${process.env.MONGO_URI}/cloth_shop`)
     .then(()=> console.log("mongodb connected"))
     .catch((err) => console.log("error..." , err))
     
